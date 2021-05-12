@@ -1,0 +1,57 @@
+.buildModel {
+  display: flex;
+  justify-content: space-around;
+  min-height: 600px;
+}
+
+.buildModel__left {
+  padding-top: 30px;
+  border: 1px solid #80808042;
+  border-radius: 10px;
+  background-color: white;
+  width: 70%;
+  margin: 15px;
+}
+
+.buildModel__right {
+  border: 1px solid #80808042;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  margin: 15px;
+}
+
+.buildModel__input {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 20px;
+  /* background: darkgray; */
+}
+
+.buildModel__input > input {
+  outline-width: 0;
+  height: 30px;
+  width: 60%;
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+.buildModel__form > form > button {
+  font-size: 1rem;
+  color: #fff;
+  background-color: black;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 16px 20px;
+  margin: 25px 0px;
+}
+
+.buildModel__input > label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
