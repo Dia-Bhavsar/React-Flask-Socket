@@ -16,17 +16,15 @@ function BuildModel() {
         formData.append('language', language);
         formData.append('version', version);
         formData.append('file', file);
-  
-        axios.post('/model', {
+
+        console.log(formData.get('file'))
+        axios({
+            method: 'POST',
+            url: '/model',
             data: formData,
             headers: { 'Content-Type': 'multipart/form-data' }
-        }).then(response => console.log(response));
-
+        }).then(response => console.log(response))
     }
-
-    // useEffect((e) => {
-    //     handleSubmit(e);
-    // }, []);
 
     return (
         <>
@@ -39,19 +37,19 @@ function BuildModel() {
                         <form onSubmit={handleSubmit}>
                             <div className="buildModel__input">
                                 <label>Domain Name:</label>
-                                <input type="text" value={modelName} onChange={e => setModelName(e.target.value)} />
+                                <input type="text" value={modelName} onChange={e => setModelName(e.target.value)} required />
                             </div>
                             <div className="buildModel__input">
                                 <label>Language:</label>
-                                <input type="text" value={language} onChange={e => setLanguage(e.target.value)} />
+                                <input type="text" value={language} onChange={e => setLanguage(e.target.value)} required />
                             </div>
                             <div className="buildModel__input">
                                 <label>Version:</label>
-                                <input type="text" value={version} onChange={e => setversion(e.target.value)} />
+                                <input type="text" value={version} onChange={e => setversion(e.target.value)} required />
                             </div>
                             <div className="buildModel__input">
                                 <label>File Upload:</label>
-                                <input type="file" onChange={e => setFile(e.target.files[0])} />
+                                <input type="file" onChange={e => setFile(e.target.files[0])} required />
                             </div>
                             <button type="submit">Sumbit</button>
                         </form>
